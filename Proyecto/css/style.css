@@ -1,0 +1,319 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: #000000;
+    background-image: url(../assets/images/f2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0px 100px;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.nav{
+    background: #330075;
+    height: 80px;
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+.nav_logo{
+    font-size: 1.5em;
+    font-weight: 900;
+}
+.nav_menu{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 3em;
+}
+.nav_item{
+    color: #fff;
+    text-decoration: none;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+.nav_item::after{
+    content: "";
+    display: block;
+    background: #fff;
+    width: 90%;
+    margin-top: 3px;
+    height: 3px;
+    clip-path: var(--clippy);
+    transition: clip-path .3s;
+}
+.nav_item:hover{
+    --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.nav_container{
+    display: flex;
+    height: 100%;
+    width: 90%;
+    margin: 0 auto;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav_input:checked + .nav_menu{
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+.nav_lavel, .nav_input{
+    display: none;
+}
+
+
+.menu1{
+    position: sticky;
+    top: 21em;
+}
+.menu1_container{
+    display: grid;
+    gap: 1em;
+    position: absolute;
+    margin: 1em;
+}
+.menu1 .botones{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    background-color: azure;
+    border-radius: 5em;
+    width: 25px;
+    padding: .3em;
+    transform: scale(1, 1);
+}
+.menu1_lab_inp{
+    background-color: azure;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    padding: .3em;
+}
+.menu1_input:checked + .botones{
+}
+.menu1_input{
+    display: none;
+}
+
+
+.welcome{
+    display: flex;
+    place-content: center;
+    padding: 8em;
+    background: linear-gradient(0deg, #0c0c0c21 0%, #1a003b 90%);
+}
+.welcome h1{
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10em;
+    background: linear-gradient(45deg,#ff0195,#5202bb,#ff0195,#5202bb);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: gradient 6s ease-in-out infinite;
+}
+@keyframes gradient{
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0% 50%;
+    }
+}
+
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+    padding: 5em;
+    margin: auto;
+    max-width: 600px;
+}
+.grid div{
+    background: #1f1f1f67;
+    background-image: linear-gradient(#330075 10%, #1f1f1f44 10%);
+    border-radius: 0.5em;
+    padding: 1em;
+}
+.grid div:hover{
+    background: #1f1f1f;
+    background-image: linear-gradient(#330075 10%, #1f1f1f 10%);
+    transition: 0.3s;
+}
+.grid div p{
+    color: azure;
+}
+.grid div h2{
+    color: azure;
+    
+}
+
+
+.cards{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    padding: 1em;
+    position: static;
+}
+.card1{
+    width: 150px;
+    height: 250px;
+    color: azure;
+    background: rgb(27,2,2);
+    background: linear-gradient(0deg, rgba(27,2,2,1) 0%, rgba(117,0,0,1) 100%);
+    border-radius: .5em;
+    display: grid;
+    place-items: center;
+    cursor: crosshair;
+    transition: .2s;
+}
+.card2{
+    width: 150px;
+    height: 250px;
+    color: azure;
+    background: rgb(2,27,24);
+    background: linear-gradient(0deg, rgba(2,27,24,1) 0%, rgba(0,117,98,1) 100%);
+    border-radius: .5em;
+    display: grid;
+    place-items: center;
+    cursor: none;
+    transition: .2s;
+}
+.card3{
+    width: 150px;
+    height: 250px;
+    color: azure;
+    background: rgb(26,2,27);
+    background: linear-gradient(0deg, rgba(26,2,27,1) 0%, rgba(117,0,117,1) 100%);
+    border-radius: .5em;
+    display: grid;
+    place-items: center;
+    cursor: wait;
+    transition: .2s;
+}
+.card1:hover{
+    box-shadow: 0px 0px 10px 5px #ff0000;
+    transform: scale(1.1);
+}
+.card2:hover{
+    box-shadow: 0px 0px 10px 5px #00ffaa;
+    transform: scale(1.1);
+}
+.card3:hover{
+    box-shadow: 0px 0px 10px 5px #fb00ff;
+    transform: scale(1.1);
+}
+.card1::after{
+    content: "";
+}
+.card2::after{
+    content: "";
+}
+.card3::after{
+    content: "";
+}
+
+
+.grid1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1em;
+    max-width: 600px;
+    margin: auto;
+    padding: 5em;
+}
+.item{
+    background: #1f1f1f;
+    color: azure;
+    border-radius: .5em;
+    padding: 1em;
+    transition: .3s;
+    box-shadow: 0px 0px 15px #1f1f1f;
+    overflow: hidden;
+    max-height: 160px;
+}
+.item1{
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+.item5{
+    grid-column-start: span 2;
+    grid-row-start: span 2;
+}
+.item1:hover{
+    background: #570058;
+    box-shadow: 0px 0px 15px #570058;
+}
+.item2:hover{
+    background: #00774f;
+    box-shadow: 0px 0px 15px #00774f;
+}
+.item3:hover{
+    background: #00774f;
+    box-shadow: 0px 0px 15px #00774f;
+}
+.item4:hover{
+    background: #00774f;
+    box-shadow: 0px 0px 15px #00774f;
+}
+.item5:hover{
+    background: #610000;
+    box-shadow: 0px 0px 15px #610000;
+}
+.item6:hover{
+    background: #00774f;
+    box-shadow: 0px 0px 15px #00774f;
+}
+@media (max-width: 730px){
+    .item1{
+        grid-column-start: span 1;
+        grid-row-start: span 1;
+    }
+    .item5{
+        grid-column-start: span 1;
+        grid-row-start: span 1;
+    }
+}
+
+@media (max-width: 620px){
+    .welcome h1{
+        font-size: 5em;
+    }
+}
+
+
+@media (max-width: 700px){
+    .nav_lavel{
+        display: block;
+        cursor: pointer;
+    }
+    .nav_menu{
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        background: #330075;
+        width: 100%;
+        left: 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        transition: clip-path .4s ease-in-out;
+    }
+}
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bebas+Neue&family=Covered+By+Your+Grace&family=Inconsolata&family=Nunito:ital,wght@1,300&family=Roboto&family=Roboto+Mono:wght@700&family=Tilt+Prism&display=swap');
+
+
+::-webkit-scrollbar{
+    background: #000000;
+}
+::-webkit-scrollbar-thumb{
+    background: #330075;
+}
